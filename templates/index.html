@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Price Recommendation for the listing</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="x14var_cont" placeholder="x14var_cont" required="required" />
+        <input type="text" name="x13var_cont" placeholder="x13var_cont" required="required" />
+		<input type="text" name="x8var_cont" placeholder="x8var_cont" required="required" />
+		<input type="text" name="x4var_cont" placeholder="x4var_cont" required="required" />
+		<input type="text" name="x11var_cont" placeholder="x11var_cont" required="required" />
+		<input type="text" name="x7var_cont" placeholder="x7var_cont" required="required" />
+		<input type="text" name="x15var_cont" placeholder="x15var_cont" required="required" />
+		<input type="text" name="x5var_cont" placeholder="x5var_cont" required="required" />
+		<input type="text" name="x10var_cont" placeholder="x10var_cont" required="required" />
+		<input type="text" name="x6var_cont" placeholder="x6var_cont" required="required" />
+		<input type="text" name="x1var_cat" placeholder="x1var_cat" required="required" />
+		<input type="text" name="x2var_cat" placeholder="x2var_cat" required="required" />
+		<input type="text" name="x9var_cat" placeholder="x9var_cat" required="required" />
+		<input type="text" name="x12var_cat" placeholder="x12var_cat" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Recommend Price</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
